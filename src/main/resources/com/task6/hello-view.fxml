@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.task6.Controller">
+    <!-- Top Section -->
+    <top>
+        <VBox alignment="CENTER" spacing="25" BorderPane.alignment="CENTER" style="-fx-background-color: #e0f7fa; -fx-padding: 30px;">
+            <Label text="Pick a shape to draw:" style="-fx-font-size: 20px; -fx-font-family: 'Arial'; -fx-text-fill: #333333; font-weight: bold;" />
+
+            <!-- ListView for available shapes with refined design -->
+            <ListView fx:id="listView" prefHeight="150" prefWidth="300" style="-fx-background-color: #ffffff; -fx-border-color: #dddddd; -fx-border-width: 1px; -fx-font-size: 16px; -fx-font-family: 'Arial'; -fx-padding: 10px;" />
+
+            <!-- ColorPicker with clean style -->
+            <ColorPicker fx:id="colorPicker" prefWidth="300" style="-fx-background-color: #ffffff; -fx-border-color: #dddddd; -fx-border-width: 1px; -fx-font-size: 16px; -fx-padding: 10px;" />
+        </VBox>
+    </top>
+
+    <!-- Center Section (Canvas for drawing) -->
+    <center>
+        <Canvas fx:id="canvas" height="550" onMouseClicked="#drawShape" width="950" style="-fx-background-color: #ffffff; border: 3px solid #bbbbbb; border-radius: 10px;" />
+    </center>
+
+    <!-- Bottom Section (Empty for future expansion) -->
+    <bottom>
+        <!-- Optionally add content here if needed -->
+    </bottom>
+</BorderPane>
+
