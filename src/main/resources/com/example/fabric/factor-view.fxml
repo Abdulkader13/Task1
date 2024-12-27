@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="borderPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.fabric.Controller">
+    <top>
+        <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20; -fx-background-color: #f4f4f4; -fx-border-color: gray; -fx-border-width: 0 0 2 0;">
+            <Label fx:id="descriptionLabel" text="Shape Drawing Tool" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+            <HBox spacing="15" alignment="CENTER">
+                <TextField fx:id="sidesField" promptText="Enter number of sides" style="-fx-pref-width: 150;" />
+                <MenuButton fx:id="colorMenu" text="Select Color" style="-fx-pref-width: 120;" />
+                <Button text="Draw Shape" onAction="#drawShape" style="-fx-background-color: #0078d7; -fx-text-fill: white; -fx-padding: 8 20;" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+            <Label text="Drawing Area" style="-fx-font-size: 14px; -fx-text-fill: gray;" />
+            <Canvas fx:id="canvas" width="700" height="450" style="-fx-border-color: #cccccc; -fx-border-width: 2; -fx-border-radius: 5;" />
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+            <Label text="© 2024 Shape Drawer Tool - All Rights Reserved" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+        </HBox>
+    </bottom>
+</BorderPane>
