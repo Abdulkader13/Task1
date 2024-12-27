@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.keeper.Controller">
+    <top>
+        <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: #37474F;">
+            <Text text="Shape Drawer" style="-fx-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" />
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Circle 1" onAction="#addCircle1" style="-fx-background-color: #FFAB40; -fx-text-fill: white;" />
+                <Button text="Circle 2" onAction="#addCircle2" style="-fx-background-color: #FFAB40; -fx-text-fill: white;" />
+                <Button text="Rectangle 1" onAction="#addRectangle1" style="-fx-background-color: #29B6F6; -fx-text-fill: white;" />
+                <Button text="Rectangle 2" onAction="#addRectangle2" style="-fx-background-color: #29B6F6; -fx-text-fill: white;" />
+            </HBox>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Triangle" onAction="#addTriangle" style="-fx-background-color: #AB47BC; -fx-text-fill: white;" />
+                <Button text="Parallelogram" onAction="#addParallelogram" style="-fx-background-color: #8E24AA; -fx-text-fill: white;" />
+                <Button text="Hexagon" onAction="#addHexagon" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+                <Button text="Remove Shape" onAction="#removeLastShape" style="-fx-background-color: #EF5350; -fx-text-fill: white;" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <Pane fx:id="drawingPanel" prefWidth="800" prefHeight="600" style="-fx-background-color: #FFFFFF; -fx-border-color: #B0BEC5; -fx-border-width: 2; -fx-padding: 15;">
+            <!-- Shapes will be dynamically drawn here -->
+        </Pane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-background-color: #263238; -fx-padding: 10;">
+            <Text text="© 2024 Shape Drawer Tool - All Rights Reserved" style="-fx-fill: white; -fx-font-size: 12px;" />
+        </HBox>
+    </bottom>
+</BorderPane>
