@@ -9,6 +9,9 @@ public class Circles extends TreeDecorator {
     private final double xPosition;
     private final double yPosition;
 
+    // Store the circle so it can be accessed later for undo
+    private Circle circle;
+
     public Circles(ChristmasTree tree, Color color, double xPosition, double yPosition) {
         super(tree);
         this.color = color;
@@ -18,12 +21,16 @@ public class Circles extends TreeDecorator {
 
     @Override
     public void draw(Pane pane) {
-        super.draw(pane);
-        drawWithRectangles(pane);
+        drawCircle(pane);
     }
 
-    private void drawWithRectangles(Pane pane) {
-        Circle circle = new Circle(xPosition, yPosition, 10, color);
+    private void drawCircle(Pane pane) {
+        circle = new Circle(xPosition, yPosition, 10, color);
         pane.getChildren().add(circle);
+    }
+
+    // Allow access to the circle for undo functionality
+    public Circle getCircle() {
+        return circle;
     }
 }

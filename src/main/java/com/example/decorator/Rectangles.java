@@ -9,6 +9,9 @@ public class Rectangles extends TreeDecorator {
     private final double xPosition;
     private final double yPosition;
 
+    // Store the rectangle for undo purposes
+    private Rectangle rectangle;
+
     public Rectangles(ChristmasTree tree, Color color, double xPosition, double yPosition) {
         super(tree);
         this.color = color;
@@ -18,13 +21,17 @@ public class Rectangles extends TreeDecorator {
 
     @Override
     public void draw(Pane pane) {
-        super.draw(pane);
-        drawWithRectangles(pane);
+        drawRectangle(pane);
     }
 
-    private void drawWithRectangles(Pane pane) {
-        Rectangle Rectangle = new Rectangle(xPosition, yPosition, 60, 40);
-        Rectangle.setFill(color);
-        pane.getChildren().add(Rectangle);
+    private void drawRectangle(Pane pane) {
+        rectangle = new Rectangle(xPosition, yPosition, 60, 40);
+        rectangle.setFill(color);
+        pane.getChildren().add(rectangle);
+    }
+
+    // Getter to access the rectangle node
+    public Rectangle getRectangle() {
+        return rectangle;
     }
 }

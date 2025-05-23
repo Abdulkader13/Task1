@@ -9,6 +9,9 @@ public class Star extends TreeDecorator {
     private final double xPosition;
     private final double yPosition;
 
+    // Store the star shape for undo
+    private Path star;
+
     public Star(ChristmasTree tree, Color color, double xPosition, double yPosition) {
         super(tree);
         this.color = color;
@@ -18,19 +21,24 @@ public class Star extends TreeDecorator {
 
     @Override
     public void draw(Pane pane) {
-        super.draw(pane);
         drawStar(pane);
     }
 
     private void drawStar(Pane pane) {
-        Path star = new Path();
-        star.getElements().addAll(new MoveTo(xPosition, yPosition - 20),
+        star = new Path();
+        star.getElements().addAll(
+                new MoveTo(xPosition, yPosition - 20),
                 new LineTo(xPosition - 20, yPosition + 10),
                 new LineTo(xPosition + 20, yPosition + 10),
-                new ClosePath());
+                new ClosePath()
+        );
 
         star.setFill(color);
         pane.getChildren().add(star);
     }
-}
 
+    // Getter to access the star node for undo
+    public Path getStar() {
+        return star;
+    }
+}
