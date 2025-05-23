@@ -5,8 +5,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 
 public class Star extends TreeDecorator {
-    private Color color;
-    private double xPosition, yPosition;
+    private final Color color;
+    private final double xPosition;
+    private final double yPosition;
 
     public Star(ChristmasTree tree, Color color, double xPosition, double yPosition) {
         super(tree);

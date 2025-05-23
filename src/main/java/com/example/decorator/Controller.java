@@ -2,12 +2,11 @@ package com.example.decorator;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.Pane;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.ColorPicker;
-import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
@@ -17,9 +16,9 @@ public class Controller implements Initializable {
     @FXML
     public Pane paneTree;
     @FXML
-    private CheckBox girlandsCheckBox;
+    private CheckBox circlesCheckBox;
     @FXML
-    private CheckBox presentsCheckBox;
+    private CheckBox rectanglesCheckBox;
     @FXML
     private CheckBox starCheckBox;
     @FXML
@@ -31,7 +30,7 @@ public class Controller implements Initializable {
 
     // Boolean flags to track the selected decoration
     private boolean isStarSelected = false;
-    private boolean isPresentsSelected = false;
+    private boolean isrectanglesSelected = false;
     private boolean isGirlandsSelected = false;
 
     @Override
@@ -50,10 +49,10 @@ public class Controller implements Initializable {
 
         // Add decoration based on the selected checkbox
         if (isGirlandsSelected) {
-            tree = new Girlands(tree, color, xClicked, yClicked);
+            tree = new Circles(tree, color, xClicked, yClicked);
             tree.draw(paneTree);
-        } else if (isPresentsSelected) {
-            tree = new Presents(tree, color, xClicked, yClicked);
+        } else if (isrectanglesSelected) {
+            tree = new Rectangles(tree, color, xClicked, yClicked);
             tree.draw(paneTree);
         } else if (isStarSelected) {
             tree = new Star(tree, color, xClicked, yClicked);
@@ -69,46 +68,46 @@ public class Controller implements Initializable {
         // Ensure only one checkbox is selected at a time
         isStarSelected = !isStarSelected;
         if (isStarSelected) {
-            isPresentsSelected = false;
+            isrectanglesSelected = false;
             isGirlandsSelected = false;
             starCheckBox.setSelected(true);
-            presentsCheckBox.setSelected(false);
-            girlandsCheckBox.setSelected(false);
+            rectanglesCheckBox.setSelected(false);
+            circlesCheckBox.setSelected(false);
         }
     }
 
     // Toggle Presents selection
     @FXML
-    private void togglePresents() {
+    private void toggleRectangles() {
         // Ensure only one checkbox is selected at a time
-        isPresentsSelected = !isPresentsSelected;
-        if (isPresentsSelected) {
+        isrectanglesSelected = !isrectanglesSelected;
+        if (isrectanglesSelected) {
             isStarSelected = false;
             isGirlandsSelected = false;
-            presentsCheckBox.setSelected(true);
+            rectanglesCheckBox.setSelected(true);
             starCheckBox.setSelected(false);
-            girlandsCheckBox.setSelected(false);
+            circlesCheckBox.setSelected(false);
         }
     }
 
-    // Toggle Girlands selection
+    // Toggle Circles selection
     @FXML
-    private void toggleGirlands() {
+    private void toggleCircles() {
         // Ensure only one checkbox is selected at a time
         isGirlandsSelected = !isGirlandsSelected;
         if (isGirlandsSelected) {
             isStarSelected = false;
-            isPresentsSelected = false;
-            girlandsCheckBox.setSelected(true);
+            isrectanglesSelected = false;
+            circlesCheckBox.setSelected(true);
             starCheckBox.setSelected(false);
-            presentsCheckBox.setSelected(false);
+            rectanglesCheckBox.setSelected(false);
         }
     }
 
     // Remove all decorations
-    public void removeAllDecorations(ActionEvent actionEvent) {
-        girlandsCheckBox.setSelected(false);
-        presentsCheckBox.setSelected(false);
+    public void removeAllDecorations() {
+        circlesCheckBox.setSelected(false);
+        rectanglesCheckBox.setSelected(false);
         starCheckBox.setSelected(false);
         paneTree.getChildren().clear(); // Clear all decorations
         tree = new ChristmasTreeImpl(); // Reset to basic tree
@@ -121,11 +120,11 @@ public class Controller implements Initializable {
         float totalCost = tree.cost();
 
         if (isGirlandsSelected) {
-            status.append(", Garland");
+            status.append(", Rectangles");
             totalCost += 50; // Cost of the garland
         }
-        if (isPresentsSelected) {
-            status.append(", Presents");
+        if (isrectanglesSelected) {
+            status.append(", Circles");
             totalCost += 80; // Cost of the presents
         }
         if (isStarSelected) {
@@ -133,6 +132,8 @@ public class Controller implements Initializable {
             totalCost += 100; // Cost of the star
         }
 
-        statusLabel.setText(status.toString() + " | Total cost: " + totalCost);
+        statusLabel.setText(status + " | Total cost: " + totalCost);
+
+
     }
 }

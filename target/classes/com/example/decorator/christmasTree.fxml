@@ -13,23 +13,22 @@
     <HBox spacing="30" alignment="CENTER">
         <!-- VBox for checkboxes and buttons on the left side -->
         <VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="250.0" spacing="20">
-            <CheckBox fx:id="starCheckBox" text="Add a triangle" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#toggleStar"/>
-            <CheckBox fx:id="presentsCheckBox" text="Add a rectangular" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#togglePresents"/>
-            <CheckBox fx:id="girlandsCheckBox" text="Add a circle" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#toggleGirlands"/>
+            <CheckBox fx:id="starCheckBox" text="Add a star" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#toggleStar"/>
+            <CheckBox fx:id="rectanglesCheckBox" text="Add a rectangular" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#toggleRectangles"/>
+            <CheckBox fx:id="circlesCheckBox" text="Add a circle" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#toggleCircles"/>
 
             <!-- Color Picker for decoration color -->
             <ColorPicker fx:id="colorPicker" style="-fx-font-size: 16px;"/>
 
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0" spacing="25">
-                <children>
-                    <Button onAction="#removeAllDecorations" text="Remove all decorations" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-size: 15px; -fx-padding: 12px 25px; -fx-border-radius: 5px;"/>
-                </children>
+                <Button onAction="#removeAllDecorations" text="Remove all decorations"
+                        style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-size: 15px; -fx-padding: 12px 25px; -fx-border-radius: 5px;"/>
             </HBox>
 
             <Label fx:id="statusLabel" text="Status: Ready" style="-fx-font-size: 15px; -fx-font-family: 'Arial'; -fx-text-fill: #333333; font-weight: bold;"/>
         </VBox>
 
         <!-- Pane for the tree (now with red presents) on the right side -->
-        <Pane fx:id="paneTree" prefHeight="600" prefWidth="550.0" style="-fx-background-color: red; border: 2px solid #999; border-radius: 10px;" onMouseClicked="#handleMouseClick"/>
+        <Pane fx:id="paneTree" prefHeight="600" prefWidth="550.0" style="-fx-background-color: white; border: 2px solid #999; border-radius: 10px;" onMouseClicked="#handleMouseClick"/>
     </HBox>
 </VBox>

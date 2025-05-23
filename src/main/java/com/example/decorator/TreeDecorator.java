@@ -3,7 +3,7 @@ package com.example.decorator;
 import javafx.scene.layout.Pane;
 
 public abstract class TreeDecorator implements ChristmasTree {
-    private ChristmasTree tree;
+    private final ChristmasTree tree;
 
     public TreeDecorator(ChristmasTree tree) {
         this.tree = tree;

@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d9768de8-4c2f-4fe6-8c05-342634eda25a" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/decorator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/decorator/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/decorator/Girlands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/decorator/Circles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/decorator/Presents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/decorator/Rectangles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/decorator/Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/decorator/Star.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/decorator/TreeDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/decorator/TreeDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/decorator/christmasTree.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/decorator/christmasTree.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/decorator/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/decorator/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/decorator/Girlands.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/decorator/Presents.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/decorator/Star.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/decorator/Star.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/decorator/TreeDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/decorator/TreeDecorator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/decorator/christmasTree.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/decorator/christmasTree.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,20 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/decorator&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/Decorator&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/decorator",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/User/Desktop/Task Manager",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,7 +76,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747983510725</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update">
+      <option name="closed" value="true" />
+      <created>1747985846736</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747985846736</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
