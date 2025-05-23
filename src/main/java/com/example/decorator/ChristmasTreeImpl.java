@@ -7,12 +7,12 @@ import javafx.scene.shape.Polygon;
 public class ChristmasTreeImpl implements ChristmasTree {
     @Override
     public void draw(Pane pane) {
-        // Рисуем елку в виде треугольника
+        // Draw the tree as a triangle
         Polygon tree = new Polygon();
         tree.getPoints().addAll(
-                239.0, 90.0,   // Вершина (по координатам звезды)
-                100.0, 370.0,  // Левый угол (изменено для удлинения)
-                380.0, 370.0   // Правый угол (изменено для удлинения)
+                239.0, 90.0,   // Top point (coordinates of the star)
+                100.0, 370.0,  // Left corner (modified for elongation)
+                380.0, 370.0   // Right corner (modified for elongation)
         );
         tree.setFill(Color.GREEN);
         pane.getChildren().add(tree);
@@ -25,6 +25,6 @@ public class ChristmasTreeImpl implements ChristmasTree {
 
     @Override
     public float cost() {
-        return 100; // Базовая стоимость елки
+        return 100; // Base cost of the tree
     }
 }

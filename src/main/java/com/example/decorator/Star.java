@@ -5,8 +5,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 
 public class Star extends TreeDecorator {
-    public Star(ChristmasTree tree){
+    private Color color;
+    private double xPosition, yPosition;
+
+    public Star(ChristmasTree tree, Color color, double xPosition, double yPosition) {
         super(tree);
+        this.color = color;
+        this.xPosition = xPosition;
+        this.yPosition = yPosition;
     }
 
     @Override
@@ -15,22 +21,15 @@ public class Star extends TreeDecorator {
         drawStar(pane);
     }
 
-    private void drawStar(Pane pane){
-
+    private void drawStar(Pane pane) {
         Path star = new Path();
-        star.getElements().addAll(new MoveTo(239,49),
-                new LineTo(217,102),
-                new LineTo(239,91),
-                new LineTo(262,102),
-                new ClosePath(),
-                new MoveTo(207, 68),
-                new LineTo(270,68),
-                new LineTo(239,91),
+        star.getElements().addAll(new MoveTo(xPosition, yPosition - 20),
+                new LineTo(xPosition - 20, yPosition + 10),
+                new LineTo(xPosition + 20, yPosition + 10),
                 new ClosePath());
 
-        star.setFill(Color.YELLOW);
-        star.setFillRule(FillRule.EVEN_ODD);
-
+        star.setFill(color);
         pane.getChildren().add(star);
     }
 }
+
