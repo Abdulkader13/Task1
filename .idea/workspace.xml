@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9768de8-4c2f-4fe6-8c05-342634eda25a" name="Changes" comment="">
+    <list default="true" id="d9768de8-4c2f-4fe6-8c05-342634eda25a" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/decorator/christmasTree.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/decorator/christmasTree.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/decorator/christmasTree.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/decorator/christmasTree.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +58,15 @@
       <option name="presentableId" value="Default" />
       <updated>1735113934314</updated>
     </task>
+    <task id="LOCAL-00001" summary="Update">
+      <option name="closed" value="true" />
+      <created>1747983510725</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747983510725</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -68,5 +79,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
