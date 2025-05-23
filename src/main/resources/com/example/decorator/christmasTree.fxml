@@ -13,9 +13,9 @@
     <HBox spacing="30" alignment="CENTER">
         <!-- VBox for checkboxes and buttons on the left side -->
         <VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="250.0" spacing="20">
-            <CheckBox fx:id="starCheckBox" text="Add a star" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#toggleStar"/>
-            <CheckBox fx:id="presentsCheckBox" text="Add presents" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#togglePresents"/>
-            <CheckBox fx:id="girlandsCheckBox" text="Add lights" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#toggleGirlands"/>
+            <CheckBox fx:id="starCheckBox" text="Add a triangle" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#toggleStar"/>
+            <CheckBox fx:id="presentsCheckBox" text="Add a rectangular" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#togglePresents"/>
+            <CheckBox fx:id="girlandsCheckBox" text="Add a circle" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" onAction="#toggleGirlands"/>
 
             <!-- Color Picker for decoration color -->
             <ColorPicker fx:id="colorPicker" style="-fx-font-size: 16px;"/>
