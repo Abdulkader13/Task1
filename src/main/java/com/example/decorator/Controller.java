@@ -28,15 +28,16 @@ public class Controller implements Initializable {
     private Label statusLabel;
     @FXML
     private ColorPicker colorPicker;
+    @FXML
+    private CheckBox moveCheckBox;
 
     private ChristmasTree tree;
 
-    // Boolean flags to track selected decoration
     private boolean isStarSelected = false;
     private boolean isrectanglesSelected = false;
     private boolean isGirlandsSelected = false;
+    private boolean isMoveModeEnabled = false;
 
-    // Track added decorations
     private final List<Node> addedDecorations = new ArrayList<>();
 
     @Override
@@ -48,6 +49,8 @@ public class Controller implements Initializable {
 
     @FXML
     private void handleMouseClick(MouseEvent event) {
+        if (isMoveModeEnabled) return; // Prevent adding while moving is enabled
+
         double xClicked = event.getX();
         double yClicked = event.getY();
         Color color = colorPicker.getValue();
@@ -70,6 +73,7 @@ public class Controller implements Initializable {
 
         if (added != null) {
             addedDecorations.add(added);
+            makeDraggable(added); // Enable drag behavior
         }
 
         updateStatus();
@@ -129,6 +133,32 @@ public class Controller implements Initializable {
             Node last = addedDecorations.remove(addedDecorations.size() - 1);
             paneTree.getChildren().remove(last);
         }
+    }
+
+    @FXML
+    private void toggleMoveMode() {
+        isMoveModeEnabled = moveCheckBox.isSelected(); // Reflect checkbox state
+    }
+
+    private void makeDraggable(Node node) {
+        final Delta dragDelta = new Delta();
+
+        node.setOnMousePressed(event -> {
+            if (!isMoveModeEnabled) return;
+            dragDelta.x = event.getX();
+            dragDelta.y = event.getY();
+            node.toFront();
+        });
+
+        node.setOnMouseDragged(event -> {
+            if (!isMoveModeEnabled) return;
+            node.setLayoutX(node.getLayoutX() + event.getX() - dragDelta.x);
+            node.setLayoutY(node.getLayoutY() + event.getY() - dragDelta.y);
+        });
+    }
+
+    private static class Delta {
+        double x, y;
     }
 
     private void updateStatus() {
