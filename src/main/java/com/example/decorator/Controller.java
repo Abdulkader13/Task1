@@ -11,8 +11,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -38,7 +36,8 @@ public class Controller implements Initializable {
     private boolean isGirlandsSelected = false;
     private boolean isMoveModeEnabled = false;
 
-    private final List<Node> addedDecorations = new ArrayList<>();
+    private final MoveHandler moveHandler = new MoveHandler();
+    private final UndoManager undoManager = new UndoManager();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -49,7 +48,7 @@ public class Controller implements Initializable {
 
     @FXML
     private void handleMouseClick(MouseEvent event) {
-        if (isMoveModeEnabled) return; // Prevent adding while moving is enabled
+        if (isMoveModeEnabled) return; // Prevent adding while in move mode
 
         double xClicked = event.getX();
         double yClicked = event.getY();
@@ -72,8 +71,8 @@ public class Controller implements Initializable {
         }
 
         if (added != null) {
-            addedDecorations.add(added);
-            makeDraggable(added); // Enable drag behavior
+            undoManager.register(added);
+            moveHandler.makeDraggable(added);
         }
 
         updateStatus();
@@ -123,42 +122,19 @@ public class Controller implements Initializable {
         paneTree.getChildren().clear();
         tree = new ChristmasTreeImpl();
         tree.draw(paneTree);
-        addedDecorations.clear();
+        undoManager.clear();
         updateStatus();
     }
 
     @FXML
     public void undoLastDecoration() {
-        if (!addedDecorations.isEmpty()) {
-            Node last = addedDecorations.remove(addedDecorations.size() - 1);
-            paneTree.getChildren().remove(last);
-        }
+        undoManager.undoLast(paneTree);
     }
 
     @FXML
     private void toggleMoveMode() {
-        isMoveModeEnabled = moveCheckBox.isSelected(); // Reflect checkbox state
-    }
-
-    private void makeDraggable(Node node) {
-        final Delta dragDelta = new Delta();
-
-        node.setOnMousePressed(event -> {
-            if (!isMoveModeEnabled) return;
-            dragDelta.x = event.getX();
-            dragDelta.y = event.getY();
-            node.toFront();
-        });
-
-        node.setOnMouseDragged(event -> {
-            if (!isMoveModeEnabled) return;
-            node.setLayoutX(node.getLayoutX() + event.getX() - dragDelta.x);
-            node.setLayoutY(node.getLayoutY() + event.getY() - dragDelta.y);
-        });
-    }
-
-    private static class Delta {
-        double x, y;
+        isMoveModeEnabled = moveCheckBox.isSelected();
+        moveHandler.setMoveModeEnabled(isMoveModeEnabled);
     }
 
     private void updateStatus() {
