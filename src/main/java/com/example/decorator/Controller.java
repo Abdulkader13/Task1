@@ -11,6 +11,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -27,17 +29,18 @@ public class Controller implements Initializable {
     @FXML
     private ColorPicker colorPicker;
     @FXML
-    private CheckBox moveCheckBox;
+    private CheckBox multiSelectCheckBox; // Only this remains
 
     private ChristmasTree tree;
 
     private boolean isStarSelected = false;
     private boolean isrectanglesSelected = false;
     private boolean isGirlandsSelected = false;
-    private boolean isMoveModeEnabled = false;
+    private boolean isMultiSelectEnabled = false;
 
     private final MoveHandler moveHandler = new MoveHandler();
     private final UndoManager undoManager = new UndoManager();
+    private final List<Node> selectedNodes = new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -48,8 +51,6 @@ public class Controller implements Initializable {
 
     @FXML
     private void handleMouseClick(MouseEvent event) {
-        if (isMoveModeEnabled) return; // Prevent adding while in move mode
-
         double xClicked = event.getX();
         double yClicked = event.getY();
         Color color = colorPicker.getValue();
@@ -72,7 +73,7 @@ public class Controller implements Initializable {
 
         if (added != null) {
             undoManager.register(added);
-            moveHandler.makeDraggable(added);
+            moveHandler.makeDraggable(added, isMultiSelectEnabled, selectedNodes);
         }
 
         updateStatus();
@@ -123,6 +124,7 @@ public class Controller implements Initializable {
         tree = new ChristmasTreeImpl();
         tree.draw(paneTree);
         undoManager.clear();
+        selectedNodes.clear();
         updateStatus();
     }
 
@@ -132,9 +134,9 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    private void toggleMoveMode() {
-        isMoveModeEnabled = moveCheckBox.isSelected();
-        moveHandler.setMoveModeEnabled(isMoveModeEnabled);
+    private void toggleMultiSelectMode() {
+        isMultiSelectEnabled = multiSelectCheckBox.isSelected();
+        selectedNodes.clear(); // start fresh
     }
 
     private void updateStatus() {

@@ -28,7 +28,7 @@
             <!-- Color Picker -->
             <ColorPicker fx:id="colorPicker" style="-fx-font-size: 16px;"/>
 
-            <!-- Buttons & Move Mode Checkbox vertically stacked -->
+            <!-- Action Buttons and Multi-Select -->
             <VBox spacing="12" alignment="CENTER">
 
                 <Button fx:id="removeButton" prefWidth="220.0" onAction="#removeAllDecorations" text="Remove All"
@@ -41,9 +41,10 @@
                                -fx-font-family: 'Segoe UI'; -fx-font-weight: bold; -fx-padding: 10 20;
                                -fx-background-radius: 12; -fx-border-radius: 12;" />
 
-                <CheckBox fx:id="moveCheckBox" text="Move Mode"
-                          onAction="#toggleMoveMode"
-                          style="-fx-font-size: 15px; -fx-font-family: 'Segoe UI'; -fx-font-weight: bold; -fx-text-fill: #1976d2;" />
+                <CheckBox fx:id="multiSelectCheckBox" text="Multi-Select Mode"
+                          onAction="#toggleMultiSelectMode"
+                          style="-fx-font-size: 14px; -fx-font-family: 'Segoe UI'; -fx-text-fill: #4a4a4a;" />
+
             </VBox>
 
             <!-- Status Label -->

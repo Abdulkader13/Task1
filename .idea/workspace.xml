@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9768de8-4c2f-4fe6-8c05-342634eda25a" name="Changes" comment=" drag-and-move feature was added">
+    <list default="true" id="d9768de8-4c2f-4fe6-8c05-342634eda25a" name="Changes" comment="Adding 2 new classes for the last 2 commits (MoveHandler and UndoManager)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/decorator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/decorator/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/decorator/MoveHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/decorator/MoveHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/decorator/christmasTree.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/decorator/christmasTree.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/decorator/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/decorator/Controller.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +100,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748052869344</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adding 2 new classes for the last 2 commits (MoveHandler and UndoManager)">
+      <option name="closed" value="true" />
+      <created>1748322634817</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748322634818</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Adding 2 new classes for the last 2 commits (MoveHandler and UndoManager)">
+      <option name="closed" value="true" />
+      <created>1748322690733</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1748322690733</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +134,7 @@
     <MESSAGE value="Update" />
     <MESSAGE value="undo last action function was added" />
     <MESSAGE value=" drag-and-move feature was added" />
-    <option name="LAST_COMMIT_MESSAGE" value=" drag-and-move feature was added" />
+    <MESSAGE value="Adding 2 new classes for the last 2 commits (MoveHandler and UndoManager)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding 2 new classes for the last 2 commits (MoveHandler and UndoManager)" />
   </component>
 </project>
